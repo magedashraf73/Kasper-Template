@@ -1,35 +1,276 @@
-/* start global rules */
+/* Start Variables */
+:root {
+  --main-color: #19c8fa;
+}
+
+/* End Variables */
+
+/* Start Global Rules */
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  --webkit-box-sizing: border-box;
+  --moz-box-sizing: border-box;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: black;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 ul {
   list-style: none;
 }
-/* small */
-@media (max-width: 768px) {
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
   .container {
     width: 750px;
   }
 }
-/* medium */
-@media (max-width: 992px) {
+
+@media (min-width: 992px) {
   .container {
     width: 970px;
   }
 }
-/* large */
-@media (max-width: 1200px) {
+
+@media (min-width: 1200px) {
   .container {
     width: 1170px;
   }
+}
+
+/* Header Styles */
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 97px;
+}
+
+header .container::after {
+  content: "";
+  width: calc(100% - 65px);
+  height: 1px;
+  background-color: #a2a2a2;
+  position: absolute;
+  bottom: 0;
+  left: 45px;
+}
+
+header .container .logo img {
+  height: 40px;
+}
+
+header .container .active {
+  color: var(--main-color);
+}
+
+header .container nav {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Toggle Menu */
+header nav .toggle-menu {
+  color: white;
+  font-size: 20px;
+  background: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+header nav .toggle-menu .close {
+  display: none;
+}
+
+header nav .toggle-menu input:checked + span .menu {
+  display: none;
+}
+
+header nav .toggle-menu input:checked + span .close {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  header nav .toggle-menu {
+    display: none;
+  }
+}
+
+header nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    z-index: 10;
+  }
+  header nav ul a {
+    padding: 10px 20px;
+    border-bottom: 1px solid transparent;
+  }
+
+  header nav ul li a:hover {
+    color: var(--main-color);
+    border-color: transparent;
+    transition: all 0.3s ease;
+    padding-left: 40px;
+  }
+  header nav ul li a.active {
+    color: var(--main-color);
+    border-color: transparent;
+    transition: all 0.3s ease;
+  }
+  header nav label + ul {
+    display: none;
+  }
+
+  header nav label:has(input:checked) + ul {
+    display: flex;
+  }
+  /* header nav ul li a.active,
+  header nav ul a {
+    border-color: transparent;
+  } */
+}
+/* .intro .container {
+  width: 750px;
+  max-width: 100%;
+} */
+
+header li a {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 600;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 2;
+  padding: 38px 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+header li a.active,
+header li a:hover {
+  color: var(--main-color);
+  border-bottom: var(--main-color) 2px solid;
+  transition: all 0.3s ease;
+}
+
+header nav .form {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  margin-left: 40px;
+  border-left: 1px solid white;
+  align-items: center;
+}
+
+header nav .form i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: white;
+}
+
+/* Intro Section */
+.intro {
+  position: relative;
+  /* min-height: 100vh;
+  background-image: url("../images/owl-sitting-branch-with-full-moon-background_1143998-14082.jpg");
+  background-size: cover;
+  background-color: #000; */
+}
+
+.intro i {
+  position: absolute;
+  top: 35%;
+  font-size: 40px;
+  color: white;
+}
+
+.intro i:first-of-type {
+  left: 2%;
+}
+
+.intro i:last-of-type {
+  right: 2%;
+}
+
+.intro .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0f748f;
+  margin: 150px 0 20px 80px;
+}
+
+.intro .text {
+  padding: 30px 60px;
+  color: #fff;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 50px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+p {
+  font-size: 13px;
+  line-height: 28px;
+  color: #ffffff;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.indicators span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.intro .active {
+  background-color: var(--main-color);
 }

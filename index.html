@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kasper | template two</title>
+    <!-- favicon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <!-- render all element normally -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <!-- font awesome -->
     <link rel="stylesheet" href="./css/all.min.css" />
     <!-- main link css file -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/kasper.css" />
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,5 +23,62 @@
       rel="stylesheet"
     />
   </head>
-  <body></body>
+  <body>
+    <!-- start header -->
+    <header>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="./design/Help/assets/logo.png" alt="" /> </a
+        >1
+        <nav>
+          <label for="toggle-menu" class="toggle-menu">
+            <input type="checkbox" name="toggle-menu" id="toggle-menu" hidden />
+            <span>
+              <i class="ri-menu-line menu"></i>
+              <i class="ri-close-line close"></i>
+            </span>
+          </label>
+
+          <ul>
+            <li><a class="active" href="#">home</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">pricing</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+          <div class="form">
+            <i class="ri-search-line"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header -->
+    <div class="intro">
+      <div class="container">
+        <div class="content">
+          <div class="text">
+            <h1>
+              HELLO WORLD! <br />
+              WE ARE KASPAR,WE MAKE ART
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+              soluta quod iste sint? Repellendus vel ipsam fuga tenetur, dolorem
+              culpa ipsa! Vero veniam, nobis aliquid ipsam earum deleniti
+              quibusdam voluptatibus!
+            </p>
+          </div>
+          <i class="ri-arrow-left-s-line"></i>
+          <i class="ri-arrow-right-s-line"></i>
+        </div>
+      </div>
+      <!-- slider indicators -->
+      <div class="indicators">
+        <span></span>
+        <span class="active"></span>
+        <span></span>
+      </div>
+    </div>
+  </body>
 </html>
